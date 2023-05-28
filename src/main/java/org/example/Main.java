@@ -39,15 +39,15 @@ public class Main {
         map = check(input);
         String k = map.get("type");
         String v = map.get("data");
-        if (k.matches("SDT")) {
+        if (k.matches(Constan.SDT.name())) {
             System.out.println(v + " là SDT");
-        } else if (k.matches("ST")) {
+        } else if (k.matches(Constan.ST.name())) {
             System.out.println(v + " là ST");
-        } else if (k.matches("STK")) {
+        } else if (k.matches(Constan.STK.name())) {
             System.out.println(v + " là STK");
-        } else if (k.matches("INPUTMISMATCH")) {
+        } else if (k.matches(Constan.INPUTMISMATCH.name())) {
             System.out.println(" Nhập sai " + v);
-        } else if (k.matches("ERROR")) {
+        } else if (k.matches(Constan.ERROR.name())) {
             System.out.println(" Có lỗi xảy ra ");
         } else
             System.out.println("Không in gì cả");
@@ -90,19 +90,19 @@ public class Main {
                     data = input.replaceFirst("\\+", "");
                 } else
                     data = input;
-                type = "SDT";
+                type = Constan.SDT.name();
             } else if (input.matches(patternSt)) {
-                type = "ST";
+                type = Constan.ST.name();
                 data = input;
             } else if (input.matches(patternStk)) {
-                type = "STK";
+                type = Constan.STK.name();
                 data = input;
             } else {
-                type = "INPUTMISMATCH";
+                type = Constan.INPUTMISMATCH.name();
                 data = input;
             }
         } else {
-            type = "ERROR";
+            type = Constan.ERROR.name();
             data = input;
         }
 
